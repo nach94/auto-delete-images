@@ -18,13 +18,10 @@
 	align-items: center;
 }
 
-#wpcontent {
-    padding: 0;
-}
-
 .hover-1 {
     color: var(--light-blue);
 }
+
 :root {
     --space-4xs: clamp(0.52rem, calc(-0.03vw + 0.53rem), 0.49rem);
     --space-3xs: clamp(0.66rem, calc(0.04vw + 0.64rem), 0.7rem);
@@ -1868,28 +1865,4 @@ html {
 
 .z-100 {
     z-index: 100;
-}
-
-.hover-menu-item:hover {
-    color: var(--rose);
-}
-
-.laravel-logo {
-    max-width: var(--space-2xl);
-}
-
-input[type="text"],
-input[type="number"],
-input[type="email"],
-input[type="tel"],
-textarea[name="message"] {
-    border: 1px solid var(--dark-grey);
-    border-radius: var(--radius-xs);
-    background: var(--dark-grey-1);
-    color: var(--white);
-}
-
-input:focus,
-textarea:focus {
-    outline: 1px solid var(--rose);
 }
