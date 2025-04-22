@@ -15,13 +15,42 @@
 
 <!-- This file should primarily consist of HTML with a little bit of PHP. -->
 
-<div class="wrap">
-	<h1>Opciones de Auto Delete Images</h1>
+<div class="flex-column gap-s bg-blue text-white padding-l">
+	<svg class="max-width-20" xmlns="http://www.w3.org/2000/svg" id="logo-25w-white" viewBox="0 0 135.717 24">
+		<script xmlns="" id="datalayer-checker-script" />
+		<path id="Trazado_133" data-name="Trazado 133" d="M16.6,20.112v3.353H.531L.5,19.315C8.763,14.9,12.215,11.88,12.215,7.465A3.99,3.99,0,0,0,8,3.315,9.125,9.125,0,0,0,1.992,5.8L0,3.282A11.858,11.858,0,0,1,8.033,0C13.112,0,16.2,2.95,16.2,7.5c0,3.319-1.261,7.5-10.722,12.382v.232Z" transform="translate(0 0.004)" fill="#fff" />
+		<path id="Trazado_134" data-name="Trazado 134" d="M180.709,17.987c0,4.681-3.386,8.067-9.228,8.067a17.283,17.283,0,0,1-7.9-1.793l.929-3.319a16.59,16.59,0,0,0,6.97,1.693c2.922,0,5.179-1.261,5.179-4.481,0-2.357-1.229-4.15-4.647-4.15a23.1,23.1,0,0,0-6.706,1.129l-.863-.365V2.319h14.573V5.671H168.361v5.544l.1.033a13.619,13.619,0,0,1,4.548-.631c4.946,0,7.7,2.556,7.7,7.369" transform="translate(-144.872 -2.053)" fill="#fff" />
+		<path id="Trazado_135" data-name="Trazado 135" d="M359.541,2.318V5.7h-1.892l-6.074,19.817h-4.846l-5.245-17h-.2l-5.178,17h-5.112L325.085,5.7h-1.892V2.318h5.179l5.079,18.622h.1l5.975-18.622h3.652l6.041,18.622h.1L354.4,2.318Z" transform="translate(-286.228 -2.052)" fill="#fff" />
+		<path id="Trazado_136" data-name="Trazado 136" d="M648.214,70.458v3.386H643l-.432-1.859h-.133c-.764,1.461-3.087,2.357-5.444,2.357a8.733,8.733,0,1,1,0-17.46,6.249,6.249,0,0,1,5.444,2.456h.166l.564-1.925h3.154V70.458Zm-5.842-4.846a5.23,5.23,0,0,0-5.378-5.378c-2.855,0-5.045,2.025-5.045,5.378a5.047,5.047,0,0,0,5.045,5.378,5.232,5.232,0,0,0,5.378-5.378" transform="translate(-556.201 -50.376)" fill="#fff" />
+		<path id="Trazado_137" data-name="Trazado 137" d="M830.318,21.953V18.6h-3.85V13.057l-3.95.8V18.6h-7.074V13.057l-3.951.8V18.6H808.9v3.353h2.589v7.336c0,4.614,2.59,6.074,6.175,6.074a11.939,11.939,0,0,0,1.627-.133V31.745a4.057,4.057,0,0,1-.631.067c-1.593,0-3.22-.531-3.22-2.722V21.953h7.074v7.336c0,4.614,2.589,6.074,6.175,6.074a11.931,11.931,0,0,0,1.626-.133V31.745a4.049,4.049,0,0,1-.631.067c-1.593,0-3.22-.531-3.22-2.722V21.953Z" transform="translate(-716.386 -11.563)" fill="#fff" />
+		<path id="Trazado_138" data-name="Trazado 138" d="M1020.833,68.9c0,3.286-2.755,5.444-7.668,5.444-2.656,0-5.643-.73-7.137-2.489l2.124-2.788a7.578,7.578,0,0,0,5.013,1.925c2.921,0,3.718-.764,3.718-1.793,0-1.195-.8-1.76-3.319-2.157l-.664-.1c-5.344-.863-6.307-2.224-6.307-5.046,0-3.087,2.722-5.012,7.137-5.012a9.879,9.879,0,0,1,6.539,2.157l-2.224,2.689a7.791,7.791,0,0,0-4.315-1.494c-2.224,0-3.22.6-3.22,1.561,0,1,.6,1.461,2.822,1.825l.7.1c4.78.631,6.805,2.224,6.805,5.178" transform="translate(-890.964 -50.376)" fill="#fff" />
+		<path id="Trazado_139" data-name="Trazado 139" d="M1136.989,2.454V4.469h.232v.415h-.945V4.469h.228V2.454h-.949V2.039h2.386v.415Z" transform="translate(-1005.677 -1.805)" fill="#fff" />
+		<path id="Trazado_140" data-name="Trazado 140" d="M1161.781,2.454V4.469h.233v.415h-.949V4.469h.232v-1.6h-.032l-.648,1.075h-.39l-.648-1.075h-.024v1.6h.237v.415h-.953V4.469h.232V2.454h-.232V2.039h.766l.81,1.384h.024l.822-1.384h.754v.415Z" transform="translate(-1026.297 -1.805)" fill="#fff" />
+	</svg>
+	<p class="text-xs">
+		Desarrollado por <a class="text-white hover-1 transition-global" href="https://25watts.com.ar/" rel="noreferrer" target="_blank"><strong>25Watss</strong></a>
+	</p>
+</div>
+<div class="padding-l text-black">
+	<h1 class="text-xl font-700"> Opciones de <span class="underline">Auto-Delete Images</span></h1>
+	<hr class="margin-vertical-m">
 	<form method="post" action="options.php">
+		<p class="text-l">¿Activar funcionalidad para productos?</p>
+		<div class="flex-row gap-4xs items-middle margin-top-s">
+			<input type="checkbox" name="_activate_for_products" id="_activate_for_products" value="1" <?php checked(get_option('_activate_for_products'), 1); ?>>
+			<label for="_activate_for_products" class="text-m">Activar en productos</label>
+		</div>
+		<hr class="margin-vertical-m">
+		<p class="text-l">¿Activar funcionalidad para posts?</p>
+		<div class="flex-row gap-4xs items-middle margin-top-s">
+			<input type="checkbox" name="_activate_for_posts" id="_activate_for_posts" value="1" <?php checked(get_option('_activate_for_posts'), 1); ?>>
+			<label for="_activate_for_posts" class="text-m">Activar en posts</label>
+		</div>
+		<hr class="margin-vertical-m">
 		<?php
-			settings_fields( 'auto_delete_images_options_group' );
-			do_settings_sections( 'auto-delete-images' );
-			submit_button();
+		settings_fields('auto_delete_images_options_group');
+		do_settings_sections('auto-delete-images');
+		submit_button();
 		?>
 	</form>
 </div>

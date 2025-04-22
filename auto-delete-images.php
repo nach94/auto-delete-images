@@ -63,6 +63,7 @@ register_deactivation_hook( __FILE__, 'deactivate_auto_delete_images' );
  * admin-specific hooks, and public-facing site hooks.
  */
 require plugin_dir_path( __FILE__ ) . 'includes/class-auto-delete-images.php';
+require_once plugin_dir_path(__FILE__) . 'includes/class-auto-delete-images-cleanup.php';
 
 /**
  * Begins execution of the plugin.

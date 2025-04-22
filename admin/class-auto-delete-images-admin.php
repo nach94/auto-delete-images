@@ -56,15 +56,37 @@ class Auto_Delete_Images_Admin {
 	 */
 	public function add_plugin_admin_menu() {
 		add_menu_page(
-			'Auto Delete Images',
-			'Auto Delete Images',
+			'AutoDelete Img',
+			'AutoDelete Img',
 			'manage_options',
 			'auto-delete-images',
 			array( $this, 'display_plugin_admin_page' ),
-			'dashicons-trash',
+			'dashicons-admin-generic',
 			81
 		);
 	}
+
+	public function register_settings() {
+		// Registrar opciones individuales
+		register_setting(
+			'auto_delete_images_options_group', // El grupo del formulario
+			'_activate_for_products'            // Nombre de la opción
+		);
+	
+		register_setting(
+			'auto_delete_images_options_group',
+			'_activate_for_posts'
+		);
+	
+		// Opcional: podrías agregar una sección si quisieras agrupar inputs (aunque no es necesario en tu caso)
+		add_settings_section(
+			'auto_delete_images_main_section',  // ID de la sección
+			'',                                 // Título (vacío si no querés ninguno)
+			null,
+			'auto-delete-images'                // Página donde aparece (coincide con do_settings_sections())
+		);
+	}
+	
 
 	/**
 	 * Display the plugin admin page.
