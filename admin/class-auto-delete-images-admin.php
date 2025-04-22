@@ -48,16 +48,21 @@ class Auto_Delete_Images_Admin {
 	 * @param      string    $version    The version of this plugin.
 	 */
 
-	add_menu_page(
-		'Auto Delete Images', // Título de la página
-		'Auto Delete Images', // Título del menú
-		'manage_options',     // Capacidad requerida
-		'auto-delete-images', // Slug del menú
-		array( $this, 'display_plugin_admin_page' ), // Callback del contenido
-		'dashicons-trash',    // Icono del menú
-		81                    // Posición del menú
-	);
+	public function add_plugin_admin_menu() {
+		add_menu_page(
+			'Auto Delete Images', // Título de la página
+			'Auto Delete Images', // Título del menú
+			'manage_options',     // Capacidad requerida
+			'auto-delete-images', // Slug del menú
+			array( $this, 'display_plugin_admin_page' ), // Callback del contenido
+			'dashicons-trash',    // Icono del menú
+			81                    // Posición del menú
+		);
+	}
 
+	/**
+	 * Contenido de la página de administración.
+	 */
 	public function display_plugin_admin_page() {
 		include_once plugin_dir_path( __FILE__ ) . 'partials/auto-delete-images-admin-display.php';
 	}
