@@ -13,6 +13,12 @@
  */
 ?>
 
+<style>
+	#wpcontent {
+		padding-left: 0;
+	}
+</style>
+
 <!-- This file should primarily consist of HTML with a little bit of PHP. -->
 
 <div class="flex-column gap-s bg-blue text-white padding-l">
@@ -32,25 +38,25 @@
 	</p>
 </div>
 <div class="padding-l text-black">
-	<h1 class="text-xl font-700"> Opciones de <span class="underline">Auto-Delete Images</span></h1>
+	<h1 class="text-l font-700"> Opciones de <span class="underline">Auto-Delete Images</span></h1>
 	<hr class="margin-vertical-m">
 	<form method="post" action="options.php">
-		<p class="text-l">¿Activar funcionalidad para productos?</p>
+		<p class="text-m">¿Activar funcionalidad para productos?</p>
 		<div class="flex-row gap-4xs items-middle margin-top-s">
-			<input type="checkbox" name="_activate_for_products" id="_activate_for_products" value="1" <?php checked(get_option('_activate_for_products'), 1); ?>>
-			<label for="_activate_for_products" class="text-m">Activar en productos</label>
+			<input class="margin-auto" type="checkbox" name="_activate_for_products" id="_activate_for_products" value="1" <?php checked(get_option('_activate_for_products'), 1); ?>>
+			<label for="_activate_for_products" class="text-s">Activar en productos</label>
 		</div>
 		<hr class="margin-vertical-m">
-		<p class="text-l">¿Activar funcionalidad para posts?</p>
+		<p class="text-m">¿Activar funcionalidad para posts?</p>
 		<div class="flex-row gap-4xs items-middle margin-top-s">
 			<input type="checkbox" name="_activate_for_posts" id="_activate_for_posts" value="1" <?php checked(get_option('_activate_for_posts'), 1); ?>>
-			<label for="_activate_for_posts" class="text-m">Activar en posts</label>
+			<label for="_activate_for_posts" class="text-s">Activar en posts</label>
 		</div>
 		<hr class="margin-vertical-m">
 		<?php
-		settings_fields('auto_delete_images_options_group');
-		do_settings_sections('auto-delete-images');
-		submit_button();
+			settings_fields('auto_delete_images_options_group');
+			do_settings_sections('auto-delete-images');
+			submit_button();
 		?>
 	</form>
 </div>

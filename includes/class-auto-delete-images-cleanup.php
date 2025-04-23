@@ -4,74 +4,75 @@ if (!defined('ABSPATH')) {
     exit; // Salir si se accede directamente.
 }
 
-class Auto_Delete_Images_Cleanup {
-
+class Clean_Up_Images {
     public function __construct() {
-        add_action('before_delete_post', array($this, 'maybe_delete_attached_images'));
+        add_action('before_delete_post', [$this, 'delete_post_images'], 10, 1);
     }
 
-    /**
-     * Verifica las opciones y decide si eliminar las imágenes adjuntas del post.
-     *
-     * @param int $post_id El ID del post que se va a eliminar.
-     */
-    public function maybe_delete_attached_images($post_id) {
-        $delete_for_posts = get_option('_activate_for_posts');
-        $delete_for_products = get_option('_activate_for_products');
+    public function delete_post_images($post_id) {
         $post_type = get_post_type($post_id);
+        $posts_activate    = get_option('_activate_for_posts') == '1';
+        $products_activate = get_option('_activate_for_products') == '1';
+        $pages_activate    = get_option('_activate_for_pages') == '1';
 
-        if (($post_type === 'post' && $delete_for_posts === '1') || ($post_type === 'product' && $delete_for_products === '1')) {
-            $this->delete_attached_images($post_id);
+        if ($posts_activate && $post_type === 'post') {
+            $image_id = get_post_thumbnail_id($post_id);
+            if ($image_id && !$this->is_image_used_elsewhere($image_id, $post_id)) {
+                wp_delete_post($image_id, true);
+            }
         }
-    }
 
-    /**
-     * Elimina las imágenes adjuntas a un post al momento de su eliminación.
-     *
-     * @param int $post_id El ID del post que se va a eliminar.
-     */
-    private function delete_attached_images($post_id) {
-        $attachments = get_attached_media('image', $post_id);
+        if ($pages_activate && $post_type === 'page') {
+            $image_id = get_post_thumbnail_id($post_id);
+            if ($image_id && !$this->is_image_used_elsewhere($image_id, $post_id)) {
+                wp_delete_post($image_id, true);
+            }
+        }
 
-        if ($attachments) {
-            foreach ($attachments as $attachment_id => $attachment) {
-                $this->maybe_delete_attachment($attachment_id, $post_id);
+        if ($products_activate && $post_type === 'product') {
+            $product = wc_get_product($post_id);
+            if (!$product) return;
+
+            $featured_image_id = $product->get_image_id();
+            $gallery_ids = $product->get_gallery_image_ids();
+
+            if ($featured_image_id && !$this->is_image_used_elsewhere($featured_image_id, $post_id, 'product')) {
+                wp_delete_post($featured_image_id, true);
+            }
+
+            foreach ($gallery_ids as $gallery_image_id) {
+                if (!$this->is_image_used_elsewhere($gallery_image_id, $post_id, 'product', true)) {
+                    wp_delete_post($gallery_image_id, true);
+                }
             }
         }
     }
 
-    /**
-     * Comprueba si la imagen adjunta está siendo utilizada por otros posts antes de eliminarla.
-     *
-     * @param int $attachment_id El ID de la imagen adjunta.
-     * @param int $current_post_id El ID del post que se está eliminando.
-     */
-    private function maybe_delete_attachment($attachment_id, $current_post_id) {
-        $posts_using_attachment = get_posts(array(
-            'post_type' => 'any',
-            'fields' => 'ids',
-            'meta_query' => array(
-                array(
-                    'key' => '_thumbnail_id',
-                    'value' => $attachment_id,
-                ),
-            ),
-            'exclude' => $current_post_id, // Excluir el post que se está eliminando
-        ));
+    private function is_image_used_elsewhere($image_id, $post_id, $post_type = '', $check_gallery = false) {
+        global $wpdb;
 
-        // Buscar la imagen en el contenido de otras publicaciones
-        $posts_using_attachment_in_content = get_posts(array(
-            'post_type' => 'any',
-            'fields' => 'ids',
-            's' => wp_get_attachment_url($attachment_id),
-            'exclude' => $current_post_id, // Excluir el post que se está eliminando
-        ));
+        $query = $wpdb->get_var($wpdb->prepare("
+            SELECT COUNT(*) FROM $wpdb->postmeta 
+            WHERE meta_key = '_thumbnail_id' 
+            AND meta_value = %d 
+            AND post_id != %d
+        ", $image_id, $post_id));
 
-        if (empty($posts_using_attachment) && empty($posts_using_attachment_in_content)) {
-            wp_delete_attachment($attachment_id, true); // true para eliminar también los archivos del disco
+        if ($query > 0) return true;
+
+        if ($post_type === 'product' && $check_gallery) {
+            $query_gallery = $wpdb->get_var($wpdb->prepare("
+                SELECT COUNT(*) FROM $wpdb->postmeta 
+                WHERE meta_key = '_product_image_gallery' 
+                AND post_id != %d 
+                AND meta_value LIKE %s
+            ", $post_id, '%' . $image_id . '%'));
+
+            if ($query_gallery > 0) return true;
         }
-    }
 
+        return false;
+    }
 }
 
-new Auto_Delete_Images_Cleanup();
+new Clean_Up_Images();
