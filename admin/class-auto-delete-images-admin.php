@@ -67,23 +67,26 @@ class Auto_Delete_Images_Admin {
 	}
 
 	public function register_settings() {
-		// Registrar opciones individuales
 		register_setting(
-			'auto_delete_images_options_group', // El grupo del formulario
-			'_activate_for_products'            // Nombre de la opción
+			'auto_delete_images_options_group',
+			'_activate_for_products'            
 		);
 	
 		register_setting(
 			'auto_delete_images_options_group',
 			'_activate_for_posts'
 		);
+
+		register_setting(
+			'auto_delete_images_options_group',
+			'_activate_for_pages'
+		);
 	
-		// Opcional: podrías agregar una sección si quisieras agrupar inputs (aunque no es necesario en tu caso)
 		add_settings_section(
-			'auto_delete_images_main_section',  // ID de la sección
-			'',                                 // Título (vacío si no querés ninguno)
+			'auto_delete_images_main_section',
+			'',
 			null,
-			'auto-delete-images'                // Página donde aparece (coincide con do_settings_sections())
+			'auto-delete-images'
 		);
 	}
 	

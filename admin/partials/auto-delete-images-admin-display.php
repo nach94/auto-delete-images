@@ -19,8 +19,6 @@
 	}
 </style>
 
-<!-- This file should primarily consist of HTML with a little bit of PHP. -->
-
 <div class="flex-column gap-s bg-blue text-white padding-l">
 	<svg class="max-width-20" xmlns="http://www.w3.org/2000/svg" id="logo-25w-white" viewBox="0 0 135.717 24">
 		<script xmlns="" id="datalayer-checker-script" />
@@ -51,6 +49,12 @@
 		<div class="flex-row gap-4xs items-middle margin-top-s">
 			<input type="checkbox" name="_activate_for_posts" id="_activate_for_posts" value="1" <?php checked(get_option('_activate_for_posts'), 1); ?>>
 			<label for="_activate_for_posts" class="text-s">Activar en posts</label>
+		</div>
+		<hr class="margin-vertical-m">
+		<p class="text-m">¿Activar funcionalidad para páginas?</p>
+		<div class="flex-row gap-4xs items-middle margin-top-s">
+			<input type="checkbox" name="_activate_for_pages" id="_activate_for_pages" value="1" <?php checked(get_option('_activate_for_pages'), 1); ?>>
+			<label for="_activate_for_pages" class="text-s">Activar en páginas</label>
 		</div>
 		<hr class="margin-vertical-m">
 		<?php

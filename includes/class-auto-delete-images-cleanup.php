@@ -1,15 +1,18 @@
 <?php
 
 if (!defined('ABSPATH')) {
-    exit; // Salir si se accede directamente.
+    exit;
 }
 
-class Clean_Up_Images {
-    public function __construct() {
+class Clean_Up_Images
+{
+    public function __construct()
+    {
         add_action('before_delete_post', [$this, 'delete_post_images'], 10, 1);
     }
 
-    public function delete_post_images($post_id) {
+    public function delete_post_images($post_id)
+    {
         $post_type = get_post_type($post_id);
         $posts_activate    = get_option('_activate_for_posts') == '1';
         $products_activate = get_option('_activate_for_products') == '1';
@@ -48,7 +51,8 @@ class Clean_Up_Images {
         }
     }
 
-    private function is_image_used_elsewhere($image_id, $post_id, $post_type = '', $check_gallery = false) {
+    private function is_image_used_elsewhere($image_id, $post_id, $post_type = '', $check_gallery = false)
+    {
         global $wpdb;
 
         $query = $wpdb->get_var($wpdb->prepare("
