@@ -18,8 +18,97 @@
 	align-items: center;
 }
 
-.hover-1 {
+.hover-1:hover {
     color: var(--light-blue);
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.gap-s {
+    gap: 1.28rem;
+    gap: var(--space-s);
+}
+
+.bg-blue {
+    background-color: var(--blue);
+}
+
+.text-white {
+    color: var(--white);
+}
+
+.padding-l {
+    padding: 2rem;
+    padding: var(--space-l);
+}
+
+.max-width-20 {
+    max-width: 20rem;
+}
+
+.text-xs {
+    font-size: 1.26rem;
+    font-size: var(--text-xs);
+}
+
+.transition-global {
+    transition: all 0.3s;
+}
+
+.underline-none {
+    text-decoration: none;
+}
+
+.underline {
+    -webkit-text-decoration: underline;
+    text-decoration: underline;
+}
+
+.text-black {
+    color: var(--black);
+}
+
+.font-700 {
+    font-weight: 700;
+}
+
+.text-l {
+    font-size: 1.8rem;
+    font-size: var(--text-l);
+}
+
+.text-m {
+    font-size: 1.6rem;
+    font-size: var(--text-m);
+}
+
+.margin-vertical-m {
+    margin-top: 1.6rem;
+    margin-top: var(--space-m);
+    margin-bottom: 1.6rem;
+    margin-bottom: var(--space-m);
+}
+
+.gap-4xs {
+    gap: 0.52rem;
+    gap: var(--space-4xs);
+}
+
+.items-middle {
+    align-items: center;
+}
+
+.margin-top-s {
+    margin-top: 1.28rem;
+    margin-top: var(--space-s);
 }
 
 :root {
@@ -59,17 +148,10 @@
     --light-blue: #dde5ff;
 }
 
-.underline-none {
-    text-decoration: none;
-}
-
+/*
 .sticky-top {
     position: sticky;
     top: 0;
-}
-
-.bg-blue {
-    background-color: var(--blue);
 }
 
 .bg-dark-grey {
@@ -124,20 +206,12 @@
     background-color: var(--black);
 }
 
-.text-black {
-    color: var(--black);
-}
-
 .border-black {
     border-color: var(--black);
 }
 
 .bg-white {
     background-color: var(--white);
-}
-
-.text-white {
-    color: var(--white);
 }
 
 .border-white {
@@ -172,11 +246,6 @@
 .padding-m {
     padding: 1.6rem;
     padding: var(--space-m);
-}
-
-.padding-l {
-    padding: 2rem;
-    padding: var(--space-l);
 }
 
 .padding-xl {
@@ -740,13 +809,6 @@
     margin-bottom: var(--space-s);
 }
 
-.margin-vertical-m {
-    margin-top: 1.6rem;
-    margin-top: var(--space-m);
-    margin-bottom: 1.6rem;
-    margin-bottom: var(--space-m);
-}
-
 .margin-vertical-l {
     margin-top: 2rem;
     margin-top: var(--space-l);
@@ -800,11 +862,6 @@
 .margin-top-xs {
     margin-top: 1.02rem;
     margin-top: var(--space-xs);
-}
-
-.margin-top-s {
-    margin-top: 1.28rem;
-    margin-top: var(--space-s);
 }
 
 .margin-top-m {
@@ -1002,11 +1059,6 @@
     margin-left: var(--space-4xl);
 }
 
-.gap-4xs {
-    gap: 0.52rem;
-    gap: var(--space-4xs);
-}
-
 .gap-3xs {
     gap: 0.66rem;
     gap: var(--space-3xs);
@@ -1020,11 +1072,6 @@
 .gap-xs {
     gap: 1.02rem;
     gap: var(--space-xs);
-}
-
-.gap-s {
-    gap: 1.28rem;
-    gap: var(--space-s);
 }
 
 .gap-m {
@@ -1197,24 +1244,9 @@
     padding-right: auto;
 }
 
-.text-xs {
-    font-size: 1.26rem;
-    font-size: var(--text-xs);
-}
-
 .text-s {
     font-size: 1.42rem;
     font-size: var(--text-s);
-}
-
-.text-m {
-    font-size: 1.6rem;
-    font-size: var(--text-m);
-}
-
-.text-l {
-    font-size: 1.8rem;
-    font-size: var(--text-l);
 }
 
 .text-xl {
@@ -1241,11 +1273,6 @@
     text-transform: uppercase;
 }
 
-.underline {
-    -webkit-text-decoration: underline;
-    text-decoration: underline;
-}
-
 .font-300 {
     font-weight: 300;
 }
@@ -1256,10 +1283,6 @@
 
 .font-500 {
     font-weight: 500;
-}
-
-.font-700 {
-    font-weight: 700;
 }
 
 .font-800 {
@@ -1332,16 +1355,6 @@
     grid-template-columns: repeat(10, 1fr);
 }
 
-.flex-row {
-    display: flex;
-    flex-direction: row;
-}
-
-.flex-column {
-    display: flex;
-    flex-direction: column;
-}
-
 .flex-1 {
     flex: 1;
 }
@@ -1392,10 +1405,6 @@
 
 .content-top {
     align-content: start;
-}
-
-.items-middle {
-    align-items: center;
 }
 
 .content-middle {
@@ -1555,10 +1564,6 @@
 
 .max-width-30 {
     max-width: 30rem;
-}
-
-.max-width-20 {
-    max-width: 20rem;
 }
 
 .max-width-10 {
@@ -1743,10 +1748,6 @@
     white-space: nowrap;
 }
 
-.transition-global {
-    transition: all 0.3s;
-}
-
 .relative {
     position: relative;
 }
@@ -1813,4 +1814,4 @@
 
 .z-100 {
     z-index: 100;
-}
+}*/
