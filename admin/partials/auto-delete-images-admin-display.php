@@ -19,11 +19,11 @@
 	}
 </style>
 
-<div class="flex-column gap-s bg-dark-grey-2 text-white padding-l">	
-	<img class="max-width-10" src="https://helloeveryone.me/wp-content/uploads/HelloEveryone-Logo-300x79.webp" alt="Logo Hello Everyone">
-	<p class="text-xs">
-		Desarrollado por <a class="text-white hover-1 transition-global" href="https://helloeveryone.me" rel="noreferrer" target="_blank"><strong>Hello Everyone</strong></a>
-	</p>
+<div class=" flex-column gap-s bg-dark-grey-2 text-white padding-l">
+<img class="max-width-10" src="https://helloeveryone.me/wp-content/uploads/HelloEveryone-Logo-300x79.webp" alt="Logo Hello Everyone">	
+	<address class="text-xs flex-row items-middle gap-xs">
+		Desarrollado por&nbsp;<a class="text-white transition-global" href="https://helloeveryone.me" rel="noreferrer" target="_blank">Hello Everyone</a>
+	</address>
 </div>
 <div class="padding-l text-black">
 	<h1 class="text-l font-700"> Opciones de <span class="underline">Auto-Delete Images</span></h1>

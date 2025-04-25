@@ -115,6 +115,19 @@
     background-color: var(--dark-grey-2);
 }
 
+.italic-none {
+    font-style: normal;
+}
+
+.aspect-16-9 {
+    aspect-ratio: 16 / 9;
+}
+
+.gap-3xs {
+    gap: 0.66rem;
+    gap: var(--space-3xs);
+}
+
 :root {
     --space-4xs: clamp(0.52rem, calc(-0.03vw + 0.53rem), 0.49rem);
     --space-3xs: clamp(0.66rem, calc(0.04vw + 0.64rem), 0.7rem);
@@ -1059,11 +1072,6 @@
     margin-left: var(--space-4xl);
 }
 
-.gap-3xs {
-    gap: 0.66rem;
-    gap: var(--space-3xs);
-}
-
 .gap-2xs {
     gap: 0.82rem;
     gap: var(--space-2xs);
@@ -1677,10 +1685,6 @@
 
 .aspect-2-3 {
     aspect-ratio: 2 / 3;
-}
-
-.aspect-16-9 {
-    aspect-ratio: 16 / 9;
 }
 
 .aspect-9-16 {
